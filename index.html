@@ -147,17 +147,26 @@
             <div class="w-full md:w-1/2 flex justify-center">
                 <div class="relative group">
                     <div class="absolute -inset-1.5 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-white p-3 shadow-2xl flex items-center justify-center border-4 border-rose-100">
-                        <!-- Custom Stylish Female Avatar Illustration -->
-                        <div class="w-full h-full rounded-full bg-gradient-to-tr from-rose-100 via-pink-100 to-purple-100 flex flex-col items-center justify-center overflow-hidden relative border border-rose-200">
-                            <i class="fa-solid fa-user-ninja text-7xl text-rose-400 mb-2"></i>
-                            <span class="text-rose-500 font-bold font-serif text-xl tracking-wider">Meila Zulfa</span>
-                            <span class="text-xs text-rose-400 font-medium mt-1">TKJ Expert & Future Entrepreneur</span>
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-white p-3 shadow-2xl flex items-center justify-center border-4 border-rose-100 flex-col">
+                        <!-- Profile Image Container with <img> Tag -->
+                        <div class="w-full h-full rounded-full overflow-hidden relative border border-rose-200 shadow-inner group/img">
+                            <img id="profile-img" 
+                                 src="image1.jpg" 
+                                 alt="Foto Meila Zulfa" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/ffe4e6/e11d48?text=Meila+Zulfa';"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110">
                             
-                            <!-- Floating Badges -->
-                            <div class="absolute bottom-4 bg-white/90 px-3 py-1 rounded-full shadow border border-rose-200 text-xs font-semibold text-rose-600 flex items-center gap-1.5">
-                                <i class="fa-solid fa-crown text-yellow-400"></i> XII TKJ 1
-                            </div>
+                            <!-- Overlay Upload Button on Hover -->
+                            <label for="image-upload" class="absolute inset-0 bg-rose-900/40 text-white flex flex-col items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity cursor-pointer text-xs font-semibold">
+                                <i class="fa-solid fa-camera text-2xl mb-1"></i>
+                                Ganti Foto
+                            </label>
+                            <input type="file" id="image-upload" accept="image/*" class="hidden" onchange="previewUploadedImage(event)">
+                        </div>
+
+                        <!-- Floating Badge -->
+                        <div class="absolute bottom-1 bg-white/95 px-4 py-1.5 rounded-full shadow-md border border-rose-200 text-xs font-semibold text-rose-600 flex items-center gap-1.5">
+                            <i class="fa-solid fa-crown text-yellow-400"></i> XII TKJ 1
                         </div>
                     </div>
                 </div>
@@ -462,6 +471,19 @@
             });
         });
 
+        // Preview uploaded image dynamically
+        function previewUploadedImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profile-img').src = e.target.result;
+                    showToast("Foto profil berhasil diperbarui!");
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
         // Copy Clipboard Helper Function (Using execCommand as per rules)
         function copyToClipboard(text) {
             const tempInput = document.createElement("input");
@@ -491,4 +513,4 @@
         }
     </script>
 </body>
-</html>
+    </html>
