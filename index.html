@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Meila Zulfa</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Poppins & Serif Aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rosepink: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            300: '#fda4af',
+                            400: '#fb7185',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                        },
+                        girly: {
+                            bg: '#FFF5F7',
+                            card: '#FFFFFF',
+                            accent: '#F472B6',
+                            soft: '#FBCFE8',
+                            purple: '#E8D5C4',
+                            text: '#4A3E3D',
+                            heading: '#2D1820'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FFF5F7;
+            color: #4A3E3D;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(244, 114, 182, 0.2);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #E11D48 0%, #EC4899 50%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #F472B6 0%, #FB7185 100%);
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- Decorative Background Blobs -->
+    <div class="blob bg-pink-300 w-72 h-72 top-10 left-10 animate-pulse"></div>
+    <div class="blob bg-rose-200 w-96 h-96 top-96 right-10 animate-pulse" style="animation-duration: 4s;"></div>
+    <div class="blob bg-purple-200 w-80 h-80 bottom-20 left-1/3 animate-pulse" style="animation-duration: 6s;"></div>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-card transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold font-serif gradient-text tracking-wide">Meila Zulfa✨</a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8 font-medium text-sm text-gray-700">
+                <a href="#about" class="hover:text-rose-500 transition-colors">Tentang Saya</a>
+                <a href="#education" class="hover:text-rose-500 transition-colors">Pendidikan</a>
+                <a href="#skills" class="hover:text-rose-500 transition-colors">Keahlian TKJ</a>
+                <a href="#contact" class="hover:text-rose-500 transition-colors">Kontak</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none text-2xl">
+                <i class="fa-solid fa-bars-staggered text-rose-500"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-rose-100 px-6 py-4 space-y-3">
+            <a href="#about" class="block text-gray-700 font-medium hover:text-rose-500">Tentang Saya</a>
+            <a href="#education" class="block text-gray-700 font-medium hover:text-rose-500">Pendidikan</a>
+            <a href="#skills" class="block text-gray-700 font-medium hover:text-rose-500">Keahlian TKJ</a>
+            <a href="#contact" class="block text-gray-700 font-medium hover:text-rose-500">Kontak</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="pt-24 max-w-6xl mx-auto px-4 sm:px-6">
+
+        <!-- Hero Section -->
+        <section id="hero" class="py-12 md:py-20 flex flex-col-reverse md:flex-row items-center justify-between gap-10">
+            <div class="w-full md:w-1/2 text-center md:text-left space-y-6">
+                <div class="inline-block px-4 py-1.5 bg-rose-100 text-rose-600 rounded-full text-sm font-semibold tracking-wide border border-rose-200 shadow-sm">
+                    🌸 Welcome to My Portfolio
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-girly-heading leading-tight">
+                    Halo, Saya <br>
+                    <span class="gradient-text font-serif">Meila Zulfa</span>
+                </h1>
+                <p class="text-gray-600 text-lg leading-relaxed max-w-lg">
+                    Saat ini saya adalah siswi <span class="font-semibold text-rose-600">SMK Ma'arif NU Tirto XII TKJ 1</span> yang bertanggung jawab, disiplin, dan berdedikasi tinggi dalam bidang Teknik Komputer & Jaringan.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
+                    <a href="#contact" class="gradient-bg text-white px-7 py-3.5 rounded-full font-semibold shadow-lg shadow-rose-300/50 hover:opacity-90 hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Hubungi Saya
+                    </a>
+                    <a href="#about" class="bg-white border-2 border-rose-300 text-rose-500 px-7 py-3.5 rounded-full font-semibold hover:bg-rose-50 hover:scale-105 transition-all duration-300">
+                        Biodata Lengkap
+                    </a>
+                </div>
+            </div>
+
+            <!-- Profile Avatar Card -->
+            <div class="w-full md:w-1/2 flex justify-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1.5 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-white p-3 shadow-2xl flex items-center justify-center border-4 border-rose-100">
+                        <!-- Custom Stylish Female Avatar Illustration -->
+                        <div class="w-full h-full rounded-full bg-gradient-to-tr from-rose-100 via-pink-100 to-purple-100 flex flex-col items-center justify-center overflow-hidden relative border border-rose-200">
+                            <i class="fa-solid fa-user-ninja text-7xl text-rose-400 mb-2"></i>
+                            <span class="text-rose-500 font-bold font-serif text-xl tracking-wider">Meila Zulfa</span>
+                            <span class="text-xs text-rose-400 font-medium mt-1">TKJ Expert & Future Entrepreneur</span>
+                            
+                            <!-- Floating Badges -->
+                            <div class="absolute bottom-4 bg-white/90 px-3 py-1 rounded-full shadow border border-rose-200 text-xs font-semibold text-rose-600 flex items-center gap-1.5">
+                                <i class="fa-solid fa-crown text-yellow-400"></i> XII TKJ 1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Biodata & Profile Section -->
+        <section id="about" class="py-12">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-rose-500 font-semibold text-sm uppercase tracking-widest">Informasi Diri</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-serif text-girly-heading mt-1">Profil & Biodata</h2>
+                <div class="w-16 h-1 bg-rose-400 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Biodata Card -->
+                <div class="glass-card p-8 rounded-3xl shadow-xl hover:shadow-rose-100 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute -right-8 -bottom-8 text-rose-100/50 text-9xl font-serif pointer-events-none">✨</div>
+                    <h3 class="text-2xl font-bold text-girly-heading mb-6 flex items-center gap-3">
+                        <i class="fa-solid fa-id-card text-rose-500"></i> Biodata Pribadi
+                    </h3>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-3 rounded-2xl bg-white/60 border border-rose-100">
+                            <div class="w-10 h-10 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium">Nama Lengkap</p>
+                                <p class="text-base font-semibold text-gray-800">Meila Zulfa</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-3 rounded-2xl bg-white/60 border border-rose-100">
+                            <div class="w-10 h-10 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-cake-candles"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium">Tempat, Tanggal Lahir</p>
+                                <p class="text-base font-semibold text-gray-800">Pekalongan, 5 Mei 2009</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-3 rounded-2xl bg-white/60 border border-rose-100">
+                            <div class="w-10 h-10 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium">Status Pendidikan</p>
+                                <p class="text-base font-semibold text-gray-800">Siswi Kelas XII TKJ 1</p>
+                                <p class="text-xs text-rose-500">SMK Ma'arif NU Tirto</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-3 rounded-2xl bg-white/60 border border-rose-100">
+                            <div class="w-10 h-10 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium">Email</p>
+                                <p class="text-base font-semibold text-gray-800 break-all">zzulfammeilaa@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-3 rounded-2xl bg-white/60 border border-rose-100">
+                            <div class="w-10 h-10 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-rocket"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium">Cita - Cita</p>
+                                <p class="text-base font-semibold text-rose-600 font-serif text-lg">Pengusaha Sukses 💼✨</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Statement Card -->
+                <div class="glass-card p-8 rounded-3xl shadow-xl hover:shadow-rose-100 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold text-girly-heading mb-4 flex items-center gap-3">
+                            <i class="fa-solid fa-heart text-rose-500"></i> Profil & Karakter
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Saat ini saya adalah siswi <strong class="text-rose-600">SMK Ma'arif NU Tirto XII TKJ 1</strong> yang memiliki integritas tinggi. Saya selalu berusaha menjadi pribadi yang <span class="bg-rose-100 text-rose-700 px-2 py-0.5 rounded-md font-semibold">bertanggung jawab</span> dan <span class="bg-rose-100 text-rose-700 px-2 py-0.5 rounded-md font-semibold">disiplin</span> dalam menjalani setiap tugas sekolah maupun kegiatan teknis jaringan.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Memiliki ketertarikan kuat dalam dunia teknologi informasi dan manajemen bisnis, dengan cita-cita besar untuk menjadi seorang **Pengusaha** yang mandiri dan menginspirasi.
+                        </p>
+                    </div>
+
+                    <!-- Personality Tags -->
+                    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-rose-100">
+                        <div class="bg-rose-50 p-3 rounded-2xl text-center border border-rose-200">
+                            <i class="fa-solid fa-check-double text-rose-500 text-lg mb-1"></i>
+                            <p class="text-xs font-bold text-gray-700">Bertanggung Jawab</p>
+                        </div>
+                        <div class="bg-rose-50 p-3 rounded-2xl text-center border border-rose-200">
+                            <i class="fa-solid fa-clock text-rose-500 text-lg mb-1"></i>
+                            <p class="text-xs font-bold text-gray-700">Disiplin Tinggi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education History Section -->
+        <section id="education" class="py-12">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-rose-500 font-semibold text-sm uppercase tracking-widest">Jejak Pendidikan</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-serif text-girly-heading mt-1">Riwayat Sekolah</h2>
+                <div class="w-16 h-1 bg-rose-400 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="relative border-l-4 border-rose-300 ml-4 md:ml-32 space-y-8 py-4">
+
+                <!-- Education 1 -->
+                <div class="relative pl-8 md:pl-10 group">
+                    <div class="absolute -left-[14px] top-1 w-6 h-6 rounded-full bg-rose-500 border-4 border-white shadow-md group-hover:scale-125 transition-all"></div>
+                    <div class="glass-card p-6 rounded-2xl shadow-md hover:shadow-lg transition-all border border-rose-100">
+                        <span class="text-xs font-bold px-3 py-1 bg-rose-100 text-rose-600 rounded-full inline-block mb-2">Sekolah Dasar</span>
+                        <h3 class="text-xl font-bold text-girly-heading">SDN Warulor</h3>
+                        <p class="text-gray-500 text-sm mt-1">Menyelesaikan pendidikan dasar dengan menanamkan kedisiplinan dan pembentukan karakter sejak dini.</p>
+                    </div>
+                </div>
+
+                <!-- Education 2 -->
+                <div class="relative pl-8 md:pl-10 group">
+                    <div class="absolute -left-[14px] top-1 w-6 h-6 rounded-full bg-rose-500 border-4 border-white shadow-md group-hover:scale-125 transition-all"></div>
+                    <div class="glass-card p-6 rounded-2xl shadow-md hover:shadow-lg transition-all border border-rose-100">
+                        <span class="text-xs font-bold px-3 py-1 bg-rose-100 text-rose-600 rounded-full inline-block mb-2">Sekolah Menengah Pertama</span>
+                        <h3 class="text-xl font-bold text-girly-heading">SMP 1 Wiradesa</h3>
+                        <p class="text-gray-500 text-sm mt-1">Aktif mengasah potensi diri, kerja sama tim, dan mengembangkan minat awal dalam teknologi.</p>
+                    </div>
+                </div>
+
+                <!-- Education 3 -->
+                <div class="relative pl-8 md:pl-10 group">
+                    <div class="absolute -left-[14px] top-1 w-6 h-6 rounded-full bg-rose-500 border-4 border-white shadow-md group-hover:scale-125 transition-all"></div>
+                    <div class="glass-card p-6 rounded-2xl shadow-md hover:shadow-lg transition-all border border-rose-200 bg-rose-50/30">
+                        <span class="text-xs font-bold px-3 py-1 gradient-bg text-white rounded-full inline-block mb-2 shadow-sm">Sekolah Menengah Kejuruan (Sekarang)</span>
+                        <h3 class="text-xl font-bold text-girly-heading">SMK Ma'arif NU Tirto</h3>
+                        <p class="text-rose-600 font-semibold text-sm">Jurusan: Teknik Komputer dan Jaringan (TKJ)</p>
+                        <p class="text-gray-600 text-sm mt-1">Kelas XII TKJ 1 — Berfokus pada keahlian konfigurasi jaringan, administrasi server, serta manajemen infrastruktur IT.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="py-12">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-rose-500 font-semibold text-sm uppercase tracking-widest">Kemampuan Teknis</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-serif text-girly-heading mt-1">Keahlian Utama (TKJ)</h2>
+                <div class="w-16 h-1 bg-rose-400 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <!-- Skill 1 -->
+                <div class="glass-card p-6 rounded-3xl shadow-lg hover:-translate-y-2 transition-all duration-300 border-t-4 border-t-rose-400 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-500 flex items-center justify-center text-2xl font-bold mb-4 shadow-sm">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-girly-heading mb-2">Menginstal aaPanel</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Mampu melakukan instalasi dan konfigurasi control panel server aaPanel untuk pengelolaan web server, database, dan SSL dengan mudah dan efisien.
+                        </p>
+                    </div>
+                    <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                        <div class="bg-rose-400 h-full w-[90%] rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="glass-card p-6 rounded-3xl shadow-lg hover:-translate-y-2 transition-all duration-300 border-t-4 border-t-pink-400 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-pink-100 text-pink-500 flex items-center justify-center text-2xl font-bold mb-4 shadow-sm">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-girly-heading mb-2">Setting VLAN</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Memahami serta menguasai segmentasi jaringan lokal menggunakan VLAN (Virtual Local Area Network) untuk efisiensi dan keamanan trafik data.
+                        </p>
+                    </div>
+                    <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                        <div class="bg-pink-400 h-full w-[85%] rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="glass-card p-6 rounded-3xl shadow-lg hover:-translate-y-2 transition-all duration-300 border-t-4 border-t-purple-400 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-500 flex items-center justify-center text-2xl font-bold mb-4 shadow-sm">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-girly-heading mb-2">Setting MikroTik</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Keahlian dalam konfigurasi router MikroTik, seperti setting IP Address, DHCP Server, Firewall Rules, Bandwidth Management, dan Hotspot.
+                        </p>
+                    </div>
+                    <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                        <div class="bg-purple-400 h-full w-[88%] rounded-full"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-12 mb-16">
+            <div class="glass-card rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden border border-rose-200">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    
+                    <div class="space-y-4">
+                        <span class="text-rose-500 font-semibold text-sm uppercase tracking-widest">Mari Terhubung</span>
+                        <h2 class="text-3xl md:text-4xl font-bold font-serif text-girly-heading">Hubungi Meila Zulfa</h2>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Tertarik berdiskusi seputar jaringan komputer, peluang usaha, atau proyek kerja sama? Jangan ragu untuk menghubungi kontak di bawah ini.
+                        </p>
+
+                        <div class="pt-4 space-y-3">
+                            <!-- Phone / WhatsApp Box -->
+                            <div class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-rose-100 shadow-sm hover:border-rose-300 transition-all">
+                                <div class="w-12 h-12 rounded-full bg-green-100 text-green-500 flex items-center justify-center text-xl shrink-0 font-bold">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400 font-medium">Nomor WhatsApp / Telepon</p>
+                                    <p class="text-lg font-bold text-gray-800">087733000806</p>
+                                </div>
+                            </div>
+
+                            <!-- Email Box -->
+                            <div class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-rose-100 shadow-sm hover:border-rose-300 transition-all">
+                                <div class="w-12 h-12 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center text-xl shrink-0 font-bold">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400 font-medium">Alamat Email</p>
+                                    <p class="text-base font-bold text-gray-800 break-all">zzulfammeilaa@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Action Box -->
+                    <div class="bg-gradient-to-br from-rose-400 to-pink-500 rounded-2xl p-8 text-white text-center shadow-lg space-y-5">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-3xl">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-serif">Kirim Pesan Langsung</h3>
+                        <p class="text-rose-100 text-sm">Klik tombol di bawah untuk langsung terhubung via WhatsApp atau kirim Email.</p>
+                        
+                        <button onclick="copyToClipboard('087733000806')" class="w-full bg-white text-rose-600 py-3.5 px-6 rounded-full font-bold shadow-md hover:bg-rose-50 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-copy"></i> Salin Nomor Kontak
+                        </button>
+
+                        <a href="mailto:zzulfammeilaa@gmail.com" class="block w-full bg-rose-700/40 border border-white/40 text-white py-3.5 px-6 rounded-full font-bold hover:bg-rose-700/60 transition-all">
+                            Kirim Email
+                        </a>
+
+                        <a href="https://wa.me/6287733000806" target="_blank" class="block w-full bg-green-600/60 border border-white/40 text-white py-3.5 px-6 rounded-full font-bold hover:bg-green-600/80 transition-all">
+                            Chat via WhatsApp
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Notification Toast for Copy Action -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-gray-900 text-white px-5 py-3 rounded-2xl shadow-xl hidden flex items-center gap-3 z-50 border border-rose-400">
+        <i class="fa-solid fa-circle-check text-rose-400 text-lg"></i>
+        <span id="toast-msg" class="text-sm font-medium">Nomor berhasil disalin!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white/80 border-t border-rose-100 py-6 text-center text-sm text-gray-500">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>© 2026 <span class="font-bold text-rose-500 font-serif">Meila Zulfa</span> — XII TKJ 1 SMK Ma'arif NU Tirto. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Copy Clipboard Helper Function (Using execCommand as per rules)
+        function copyToClipboard(text) {
+            const tempInput = document.createElement("input");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // Mobile compatibility
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            showToast("Nomor WhatsApp (087733000806) telah disalin!");
+        }
+
+        // Custom Toast Notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = message;
+            
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
